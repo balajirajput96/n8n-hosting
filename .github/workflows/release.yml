@@ -21,6 +21,8 @@ concurrency:
 
 jobs:
   release:
+    # Publishing upstream release artifacts from a fork is not authorized.
+    if: github.repository == 'n8n-io/n8n-hosting'
     runs-on: ubuntu-latest
     steps:
       - name: Run Release Please
